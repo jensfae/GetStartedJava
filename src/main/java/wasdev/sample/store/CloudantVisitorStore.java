@@ -80,8 +80,8 @@ public class CloudantVisitorStore implements VisitorStore{
 	public Collection<Visitor> getAll(){
         List<Visitor> docs;
 		try {
-//			docs = db.getAllDocsRequestBuilder().includeDocs(true).build().getResponse().getDocsAs(Visitor.class);
-			docs = db.findByIndex("{\"selector\":{\"name\":{\"$regex\":\"^j\"}}}", Visitor.class);
+			docs = db.getAllDocsRequestBuilder().includeDocs(true).build().getResponse().getDocsAs(Visitor.class);
+//			docs = db.findByIndex("{\"selector\":{\"name\":{\"$regex\":\"^j\"}}}", Visitor.class);
 		
 		} catch (Exception e) {
 			return null;
